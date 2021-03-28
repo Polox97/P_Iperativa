@@ -58,6 +58,20 @@ function abrirParacaidas(altura, velocidad){
     return altura>=2000 && altura<=3000 && velocidad<1000 ? "Abrir paracaidas" : "No se abre";
 }
 
+function sandwich(tomate, papas, huevo){
+    let base = 150;
+    if(tomate){
+        base = base + 20;
+    }
+    if(papas){
+        base = base + 50;
+    }
+    if(huevo){
+        base = base + 60;
+    }
+    return base;
+}
+
 // ------ CASOS DE USO ------- //
 
 console.log("");
@@ -110,6 +124,14 @@ console.log(aprovacionNotas(7)); //Aprueba
 
 console.log("");
 console.log("Función abrirParacaidas:");
-console.log(abrirParacaidas(1000,2000)); //Reprueba
-console.log(abrirParacaidas(2000,700)); //Recuperatorio
-console.log(abrirParacaidas(4000,900)); //Aprueba
+console.log(abrirParacaidas(1000,2000)); //No abre
+console.log(abrirParacaidas(2000,700)); //Abre
+console.log(abrirParacaidas(4000,900)); //No abre
+
+console.log("");
+console.log("Función sandwich:");
+console.log(sandwich(true,true,true)); //280
+console.log(sandwich(false,false,false)); //150
+console.log(sandwich(true,true,false)); //220
+console.log(sandwich(false,true,true)); //260
+console.log(sandwich(true,false,true)); //230
